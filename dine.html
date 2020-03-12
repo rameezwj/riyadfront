@@ -630,21 +630,65 @@
       },
     });
 
-    // top events & offers timeline
-      var controller = new ScrollMagic.Controller();
-      var tl_topEventOffers = new TimelineMax(); // top events & offers timeline
+    // ScrollMagic controller
+    var controller = new ScrollMagic.Controller();
 
-      tl_topEventOffers.from(`.top_events_offers_outer_wrapper h4`, 1, {x: -400, ease: Power3.easeOut })
-      .staggerFrom('.top_events_offers_outer_wrapper .swiper-slide', 1, { y: 150, ease: Power2.easeOut }, .1, '-=1')
-      .staggerFromTo('.slide_content_wrapper > img', 5, { scale: 1.3 }, { scale: 1, ease: Power4.easeOut }, 0, '-=1')
+    // h4 section headings
+      jQuery('h4.section_heading').each(function(){
+        var tl_section_heading = new TimelineMax();
 
-      var scene_topEventOffers = new ScrollMagic.Scene({
-        offset: -50,
-        reverse: false,
-        triggerElement: '.top_events_offers_outer_wrapper',
+        tl_section_heading.from(jQuery(this), 1, {opacity: 0, x: -400, ease: Power3.easeOut })
+        
+        var scene_about = new ScrollMagic.Scene({
+          offset: '-200px',
+          reverse: false,
+          triggerElement: this,
+        })
+        .setTween(tl_section_heading).addTo(controller);
       })
-      .setTween(tl_topEventOffers).addTo(controller);
-    // top events & offers timeline
+    // h4 section headings
+
+    // top restaurants
+      var tl_filter = new TimelineMax();
+
+      tl_filter.staggerFrom(jQuery('.featured_products_wrapper .inner_wrapper div'), 1, {opacity: 0, y: 200, ease: Power3.easeOut }, .2)
+
+      var scene_about = new ScrollMagic.Scene({
+        offset: '-200px',
+        reverse: false,
+        triggerElement: '.featured_products_wrapper',
+      })
+      .setTween(tl_filter).addTo(controller);
+    // top restaurants
+
+    // individual restaurants
+      jQuery('.restaurants_item').each(function(){
+        var tl_restaurants = new TimelineMax();
+
+        tl_restaurants.staggerFromTo(jQuery(this), 1, { scaleY: 1, opacity: 0, y: 200 }, { scaleY: 1, opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
+
+        var scene_about = new ScrollMagic.Scene({
+          offset: '-200px',
+          reverse: false,
+          triggerElement: this,
+        })
+        .setTween(tl_restaurants).addTo(controller);
+      })
+    // individual restaurants
+
+    // filter
+      var tl_filter = new TimelineMax();
+
+      tl_filter.from(jQuery('.filter_section'), 1, {opacity: 0, y: 200, ease: Power3.easeOut })
+
+      var scene_about = new ScrollMagic.Scene({
+        offset: '-200px',
+        reverse: false,
+        triggerElement: '.filter_section',
+      })
+      .setTween(tl_filter).addTo(controller);
+    // filter
+
 
     // dom ready event
     var navigate = '';

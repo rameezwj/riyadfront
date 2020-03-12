@@ -557,17 +557,20 @@ body *{
   }
   .right-opt .search-wrapper{
     display: inline-block;
-    width: 200px;
+    width: 220px;
   }
   .right-opt .search-wrapper input[type=text]{
     background-color: transparent;
     border: 1px solid #ffffff7a;
-    padding: 13px 15px;
+    padding: 13px 45px 13px 15px;
     width: 100%;
     color: #fff;
     font-family: 'kanun_extralight';
     font-size: 13px;
     transition: all .3s ease-in;
+    background: url(../img/icon_search_gray.svg) no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
   }
   .right-opt .search-wrapper input[type=text]:focus{
     background-color: #fff;
@@ -575,7 +578,7 @@ body *{
   }
   .right-opt .req{
     display: block;
-    width: 200px;
+    width: 220px;
     margin-left: auto;
     position: relative;
     overflow: hidden;
@@ -830,7 +833,7 @@ body *{
   }
   /*.home_types_wrapper .img_types.img_type_1{ top: 100%; }*/
 
-  .home_types_wrapper .types:hover ~ .img_type_x{ top: -150px; transform: scale(1)}
+  .home_types_wrapper .types:hover ~ .img_type_x{ top: -100px; transform: scale(1)}
   .home_types_wrapper .type1:hover ~ .img_type_1{ opacity: 1; top: 0;  transform: scale(1)}
   .home_types_wrapper .type2:hover ~ .img_type_2{ opacity: 1; top: 0; transform: scale(1)}
   .home_types_wrapper .type3:hover ~ .img_type_3{ opacity: 1; top: 0; transform: scale(1)}
