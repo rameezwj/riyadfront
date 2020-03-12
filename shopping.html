@@ -487,9 +487,9 @@
     });
 
     
-    // shop grid timeline
-      var controller = new ScrollMagic.Controller();
+    var controller = new ScrollMagic.Controller();
 
+    // shop grid timeline
       jQuery('.grid-item').each(function(){
         var tl_shop = new TimelineMax(); // shop grid timeline
 
@@ -504,6 +504,18 @@
       })
     // shop grid timeline
 
+    // filter
+      var tl_filter = new TimelineMax();
+
+      tl_filter.from(jQuery('.filter_section'), 1, {opacity: 0, y: 200, ease: Power3.easeOut })
+
+      var scene_about = new ScrollMagic.Scene({
+        offset: '-200px',
+        reverse: false,
+        triggerElement: '.filter_section',
+      })
+      .setTween(tl_filter).addTo(controller);
+    // filter
 
     // dom ready event
     var navigate = '';
