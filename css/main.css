@@ -2573,5 +2573,63 @@ body *{
       /*background-size: 105% auto;*/
     }
   /**/
+
+  /*shop page*/
+    .shop_products_wrapper {
+      overflow: hidden;
+    }
+    .shop_products_wrapper .shop_items div:nth-child(1) {
+      width: calc( 60% - 20px );
+      height: 400px;
+      float: left;
+      margin-right: 20px;
+      background-color: red;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: all .4s ease-out;
+    }
+    .shop_products_wrapper .shop_items div:nth-child(2) {
+      width: 40%;
+      height: 190px;
+      float: left;
+      margin-bottom: 20px;
+      background-color: red;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transition: all .4s ease-out;
+    }
+    .shop_products_wrapper .shop_items div:nth-child(3) {
+      width: 40%;
+      height: 190px;
+      float: left;
+      background-color: red;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transition: all .4s ease-out;
+    }
+    .shop_products_wrapper .shop_items{
+      margin: 20px;
+      overflow: hidden;
+    }
+    .shop_products_wrapper .shop_items div{
+      overflow: hidden;
+    }
+    .shop_products_wrapper .shop_items div img{
+      width: 100%;
+      height: auto;
+    }
+
+    .shop_products_wrapper .shop_items.type2 div{
+      float: right;
+    }
+    .shop_products_wrapper .shop_items.type2 div:nth-child(1){
+      margin-left: 20px;
+      margin-right: auto;
+    }
+  /*shop page*/
 /*inner pages*/
 }
