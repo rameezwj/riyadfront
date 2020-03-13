@@ -263,7 +263,7 @@
     <!-- 3rd fold -->
 
     <!-- home types -->
-    <div class="home_types_wrapper outer_wrapper">
+    <div class="home_types_wrapper outer_wrapper parallax-window" data-parallax="scroll" data-image-src="img/types.jpg">
       <div class="types type1">
         <h5> Shopping </h5>
         <div class="types_content_wrapper">
@@ -307,16 +307,10 @@
         </div>
       </div>
 
-      <!-- <div class="type_default_banr"></div>
       <div class="type1_banr"></div>
       <div class="type2_banr"></div>
       <div class="type3_banr"></div>
-      <div class="mask_reveal"></div> -->
-
-      <img src="img/types.jpg"/ class="img_types img_type_x">
-      <img src="img/banr_a.jpg"/ class="img_types img_type_1">
-      <img src="img/banr_b.jpg"/ class="img_types img_type_2">
-      <img src="img/banr_c.jpg"/ class="img_types img_type_3">
+      <div class="mask_reveal"></div>
     </div>
     <!-- home types -->
 
@@ -610,7 +604,7 @@
       var tl_whatsHappening = new TimelineMax(); // what happening timeline
 
       tl_whatsHappening.from(`.whats_happening_outer_wrapper h4`, 1, {x: -400, ease: Power3.easeOut })
-      .staggerFrom('.whats_happening_outer_wrapper .swiper-slide, .whats_happening_outer_wrapper .swiper-slide .slide_content .anim', 1, { opacity: 0, y: 150, ease: Power2.easeOut }, .1, '-=1')
+      .staggerFrom('.whats_happening_outer_wrapper .swiper-slide, .whats_happening_outer_wrapper .swiper-slide .slide_content .anim', 1, { opacity: 0, y: 150, ease: Power2.easeOut }, .2, '-=1')
       .staggerFromTo('.slide_content_wrapper > img', 5, { scale: 1.3 }, { scale: 1, ease: Power4.easeOut }, 0, '-=1')
 
       var scene_whatsHappening = new ScrollMagic.Scene({
@@ -642,7 +636,7 @@
       var controller = new ScrollMagic.Controller();
       var hometypes = new TimelineMax(); // what happening timeline
 
-      hometypes.fromTo(`.home_types_wrapper`, 5, { scale: 1, y: 0, 'clip-path': 'circle(0px at center)' }, { scale: 1, y: 0, 'clip-path': 'circle(2000px at left)', ease: Power3.easeOut }, .3)
+      // hometypes.fromTo(`.home_types_wrapper`, 3, { scale: 1, y: 0, 'clip-path': 'circle(0px at center)' }, { scale: 1, y: 0, 'clip-path': 'circle(2000px at left)', ease: Power3.easeOut }, .1)
 
       var scene_hometypes = new ScrollMagic.Scene({
         offset: 0,

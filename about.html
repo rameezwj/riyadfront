@@ -137,12 +137,12 @@
             </div>
           </div>
 
-          <div class="aboutus_item layout_2">
+          <div class="aboutus_item layout_2 marginb100">
             <h4>
               Kaden Projects
             </h4>
             <div class="aboutus_img">
-              <img src="img/hm_banr1x.jpg" />
+              <img src="img/ba.jpg" />
             </div>
 
             <div class="aboutus_content">
@@ -156,12 +156,16 @@
               <p>
                 Suspendisse ac felis finibus, rhoncus erat non, placerat tortor. Aenean eget tempor nisl. Phasellus euismod velit id ex facilisis bibendum non vitae mauris. Phasellus mollis placerat metus, nec malesuada lorem volutpat eu.
               </p>
+
+              <p>
+                Suspendisse ac felis finibus, rhoncus erat non, placerat tortor. Aenean eget tempor nisl. Phasellus euismod velit id ex facilisis bibendum non vitae mauris. Phasellus mollis placerat metus, nec malesuada lorem volutpat eu.
+              </p>
             </div>
           </div>
 
-          <div class="aboutus_item ">
+          <div class="aboutus_item marginb100">
             <div class="aboutus_img">
-              <img src="img/hm_banr_leasing.jpg" />
+              <img src="img/hotl1.jpg" />
             </div>
 
             <div class="aboutus_content">
@@ -169,13 +173,21 @@
                 Project Name
               </span>
 
+              <h1>
+                Riyad Front BUSINESS DESTINATION
+              </h1>
+
+              <p>
+                Address Downtown,  is conveniently situated 15 minutes away from Riyadh Front and offers easy access of the most renowned landmarks and leisure hotspots in the city.
+              </p>
+
               <p>
                 Address Downtown,  is conveniently situated 15 minutes away from Riyadh Front and offers easy access of the most renowned landmarks and leisure hotspots in the city.
               </p>
             </div>
           </div>
 
-          <div class="aboutus_item layout_2">
+          <div class="aboutus_item layout_2 marginb100">
             <div class="aboutus_img">
               <img src="img/banr_b.jpg" />
             </div>
@@ -190,11 +202,7 @@
               </p>
 
               <p>
-                Situated 15 minutes away from Riyadh Front and offers easy access of the most renowned landmarks and leisure hotspots in the city.
-              </p>
-
-              <p>
-                Address Downtown,  is conveniently situated 15 minutes away from Riyadh Front and offers easy access of the most renowned landmarks and leisure hotspots in the city.
+                Riyadh Front and offers easy access of the most renowned landmarks and leisure hotspots in the city.
               </p>
             </div>
           </div>
@@ -368,6 +376,17 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
   <script src="js/jquery.mCustomScrollbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script>
+
+
+  <script type="text/javascript">
+    var images = document.querySelectorAll('.aboutus_img img');
+    new simpleParallax(images, {
+      overflow: false,
+      delay: 2,
+      transition: 'cubic-bezier(0,0,0,1)'
+    });
+  </script>
 
   <!-- blotter effect, to be used later -->
   <!-- <script src="js/blotter.min.js"></script>
@@ -427,7 +446,7 @@
         var tl_about = new TimelineMax(); // what happening timeline
 
         tl_about.from(jQuery(this).find(`h4`), 2, {x: -500, ease: Power3.easeOut })
-        .staggerFromTo(jQuery(this).find('.aboutus_img img, .aboutus_content h1, .aboutus_content span, .aboutus_content p'), 2, { scaleY: 0, opacity: 0, y: 200 }, { scaleY: 1, opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
+        .staggerFromTo(jQuery(this).find('.aboutus_img, .aboutus_content h1, .aboutus_content span, .aboutus_content p'), 2, { opacity: 0, y: 200 }, { opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
 
         var scene_about = new ScrollMagic.Scene({
           offset: '-100px',
