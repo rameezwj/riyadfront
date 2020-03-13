@@ -258,7 +258,7 @@ input, textarea{
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: right 20px center;
-    border: 1px solid #ffffff6e;
+    border: 1px solid #fff;
     overflow: hidden;
     transition: all .3s ease-in;
   }
@@ -270,8 +270,7 @@ input, textarea{
   .effect1 em{
     position: relative;
     z-index: 3;
-    font-weight: bold;
-    font-style: normal;
+    font-weight: normal;
   }
   .prim_btns::before,
   .effect1::before{
@@ -309,7 +308,7 @@ input, textarea{
     z-index: 2;
   }
   .prim_btns.btns_pink{
-    border: 1px solid #ea007f96;
+    border: 1px solid #ea007f;
     color: #ea007f;
     background-image: url('../img/right-chevron-pink.svg');
   }
@@ -883,11 +882,17 @@ body *{
   .hm_about_wrapper{
     position: relative;
     height: 650px;
-    background-color: transparent;
+    background-color: #f2f2f2;
     /*background: url('../img/hm_about_banner.jpg') no-repeat;
     background-position: right center;
     background-size: auto 120%;*/
     overflow: hidden;
+  }
+  .hm_about_inner_wrapper{
+    padding: 0 5%;
+    background-color: #fff;
+    /*overflow: hidden;*/
+    height: 100%;
   }
   .hm_about_wrapper .mask_reveal{
     position: absolute;
@@ -904,7 +909,7 @@ body *{
     font-size: 27px;
     font-weight: bold;
     font-family: "kanun_light";
-    background-color: #f3f3f3;
+    /*background-color: #fff;*/
     margin: 0;
     padding: 80px 0 20px 5%;
     z-index: 3;
@@ -912,18 +917,23 @@ body *{
   }
 
   .hm_about_wrapper .about_content_wrapper{
-    position: relative;
+    /*position: relative;
     width: calc( ( 100% / 3 ) * 2 );
     background-color: #fff;
     padding-left: 5%;
+    float: left;
+    height: calc( 100% - 131px );*/
+
+    position: relative;
+    width: calc( 100% - 500px );
+    background-color: #fff;
     float: left;
     height: calc( 100% - 131px );
   }
 
   .hm_about_wrapper .about_content_wrapper .about_content{
     position: relative;
-    padding: 100px 50px 50px 0;
-    width: 70%;
+    padding: 50px 50px 50px 0;
     /*top: 50%;*/
     /* left: 5%; */
     /*transform: translateY(-50%);*/
@@ -944,7 +954,7 @@ body *{
     font-size: 30px;
     font-family: "kanun_light";
     margin: 0 0 30px 0;
-    /*width: 45%;*/
+    width: 60%;
   }
 
   .hm_about_wrapper .about_content_wrapper .about_content p{
@@ -956,14 +966,16 @@ body *{
     width: 90%;
   }
   .content_rt_wrapper{
-    width: calc( 100% / 3 );
+    width: 500px;
     height: calc( 100% - 131px );
     background-repeat: no-repeat;
-    /*background-size: contain;*/
-    /*background-position: right center;*/
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
     position: relative;
+    background-color: red;
     float: right;
+    top: -50px;
+    overflow: hidden;
   }
   .content_rt_wrapper .content_rt{
     padding: 50px 80px;
@@ -1013,7 +1025,13 @@ body *{
   .content_rt_wrapper .content_rt a:hover img{
     left: -20px;
   }
-
+  .content_rt_wrapper > img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    /*top: -50px;*/
+  }
   .c_form input{
     border-bottom: 1px solid #ccc;
     background-color: #fff;
@@ -1234,7 +1252,7 @@ body *{
   .stay_connect_wrapper{
     position: relative;
     width: 100%;
-    padding: 100px 0 100px 5%;
+    padding: 40px 0 70px 5%;
     background: #fff;
   }
 
@@ -1474,8 +1492,8 @@ body *{
     height: 100%;
     top: 0;
     left: -150%;
-    background-color: #30add7;
-    opacity: .8;
+    background-color: #000;
+    opacity: .7;
     content: "";
     display: block;
     z-index: 1;
