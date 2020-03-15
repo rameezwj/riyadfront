@@ -190,7 +190,7 @@ textarea {
   }
 }
 
-html{
+html, body{
   position: relative;
   height: 100%;
 }
@@ -208,7 +208,7 @@ body {
 a{
   text-decoration: none;
 }
-input, textarea, select{ outline: none; }
+input, textarea, select{ outline: none; border: 0; }
 ul,li{
   margin: 0;
   list-style-type: none;
@@ -219,9 +219,10 @@ p{
   margin: 0;
 }
 
-input, textarea{
-  outline: none;
-  border: none;
+input, textarea, select{
+  outline: none !important;
+  /*border: none !important;*/
+  border-radius: 0 !important;
 }
 
 /*helper classes*/
@@ -244,6 +245,8 @@ input, textarea{
     display: block;
   }
   .colr_white{ color: #fff !important; }
+  .colr_blue{ color: #30add7 !important; }
+  .colr_pink{ color: #ea007f !important; }
 
   .prim_btns,
   .effect1{
@@ -1862,8 +1865,10 @@ body *{
     .hotel_item{
       position: relative;
       overflow: hidden;
-      margin: 50px 0;
+      margin: 70px 0;
       float: left;
+
+      display: flex;
     }
     .hotel_item .hotel_img{
       float: left;
@@ -1894,34 +1899,41 @@ body *{
     .hotel_item .hotel_content h1{
       text-transform: uppercase;
       color: #961e77;
-      line-height: 33px;
+      line-height: 42px;
       font-size: 35px;
       font-family: "kanun_light";
       margin: 0 0 30px 0;
     }
     .hotel_item .hotel_content p{
       color: #7b7b7b;
-      line-height: 17px;
-      font-size: 15px;
+      line-height: 20px;
+      font-size: 17px;
       font-family: "kanun_light";
       margin: 0 0 10px 0;
     }
 
     .hotel_item.layout_2 .hotel_content{
       float: left;
-      padding: 0 150px 50px 0;
+      padding: 0 200px 50px 0;
     }
     .hotel_item.layout_2 .hotel_img{
       float: right;
+
+      order: 2;
     }
 
+    .hotel_item .hotel_content > div {
+      position: absolute;
+      bottom: 0;
+      /*margin-top: 30px;*/
+    }
     .prom_banner{
       position: relative;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       overflow: hidden;
-      margin: 100px 0;
+      margin: 100px 0 0 0;
     }
     .prom_banner img{
       width: 100%;
@@ -2034,7 +2046,7 @@ body *{
     }
     .aboutus_item .aboutus_content p{
       color: #7b7b7b;
-      line-height: 22px;
+      line-height: 20px;
       font-size: 15px;
       font-family: "kanun_light";
       margin: 0 0 10px 0;
@@ -2134,7 +2146,7 @@ body *{
     }
     .events_item .events_content p{
       color: #7b7b7b;
-      line-height: 17px;
+      line-height: 20px;
       font-size: 15px;
       font-family: "kanun_light";
       margin: 0 0 10px 0;
@@ -2429,6 +2441,11 @@ body *{
       float: left;
       margin: 0 10px 40px 10px;
       width: calc( ( 100% / 3 ) - 20px );
+      transform: scale(1);
+      transition: all .3s ease-out;
+    }
+    .restaurants_item:hover{
+      transform: scale(.98) !important;
     }
     .restaurants_item .restaurants_img{
       /*float: left;*/
@@ -2438,6 +2455,13 @@ body *{
     .restaurants_item .restaurants_img img{
       width: 100%;
       height: auto;
+      /*filter: grayscale(0);*/
+      /*transform: scale(1);*/
+      /*transition: all .3s ease-out;*/
+    }
+    .restaurants_item:hover img{
+      /*transform: scale(.98) !important;*/
+      /*filter: grayscale(1);*/
     }
     .restaurants_item .restaurants_img h5{
       position: absolute;
@@ -2466,7 +2490,7 @@ body *{
       text-transform: capitalize;
       border-bottom: 1px solid #ccc;
     }
-    .restaurants_item .restaurants_content span{
+    .restaurants_item .restaurants_content > span{
       color: #961e77;
       line-height: 25px;
       font-size: 23px;
@@ -2484,10 +2508,14 @@ body *{
     }
     .restaurants_item .restaurants_content p{
       color: #7b7b7b;
-      line-height: 17px;
-      font-size: 15px;
+      line-height: 25px;
+      font-size: 17px;
       font-family: "kanun_light";
       margin: 0 0 10px 0;
+    }
+    .restaurants_item .restaurants_content p span{
+      display: inline-block;
+      margin-right: 0;
     }
 
     .restaurants_item.layout_2 .restaurants_content{
@@ -2501,10 +2529,10 @@ body *{
       overflow: hidden;
     }
     .featured_products_wrapper .inner_wrapper div:nth-child(1){
-      width: calc( 70% - 20px );
-      height: 400px;
+      width: calc( ( ( 100% / 3 ) * 2 ) - 20px );
+      /* height: 400px; */
       float: left;
-      margin-right: 20px;
+       margin-right: 20px;
       background-color: red;
       background-repeat: no-repeat;
       background-size: cover;
@@ -2547,28 +2575,42 @@ body *{
       right: -50px;
     }
     .featured_products_wrapper .inner_wrapper div:nth-child(2){
-      width: 30%;
-      height: 190px;
+      width: calc( 100% / 3 );
+      /*height: calc( ( 480px / 2 ) - 10px );*/
       float: left;
       margin-bottom: 20px;
-      background-color: red;
+      /* background-color: red; */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       transition: all .4s ease-out;
+      text-align: right;
+      overflow: hidden;
     }
     .featured_products_wrapper .inner_wrapper div:nth-child(3){
-      width: 30%;
-      height: 190px;
+      width: calc( 100% / 3 );
+      /*height: calc( ( 480px / 2 ) - 10px );*/
       float: left;
-      background-color: red;
+      /*margin-bottom: 20px;*/
+      /*background-color: red; */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       transition: all .4s ease-out;
+      text-align: right;
+      overflow: hidden;
     }
     .featured_products_wrapper .inner_wrapper div:hover{
       /*background-size: 105% auto;*/
+    }
+    .featured_products_wrapper .inner_wrapper div img{
+      width: 100%;
+      height: auto;
+    }
+    .featured_products_wrapper .inner_wrapper div:nth-child(2) img,
+    .featured_products_wrapper .inner_wrapper div:nth-child(3) img{
+      /*width: auto;
+      height: 100%;*/
     }
   /**/
 
@@ -2720,32 +2762,36 @@ body *{
       margin-top: 50px;
       margin-bottom: 30px;
     }
-
+    .filter_section > div{
+      display: flex;
+      justify-content: space-between;
+    }
     .filter_section div div{
       float: left;
       /*width: calc( 100% / 3 );*/
       width: 27%;
       position: relative;
+      width: calc( ( 100% / 3 ) - 13px );
     }
     .filter_section div div:nth-child(2){
-      padding: 0 10px;
+      /*padding: 0 10px;*/
     }
     .filter_section div div:nth-child(3){
-      width: calc( 100% - 54% );
+      /*width: calc( 100% - 54% );*/
     }
     .filter_section div div select{
       width: 100%;
-      padding: 13px 10px;
+      padding: 15px 20px;
       display: block;
-      background: #30add7;
-      color: #fff;
+      /*background: #30add7;*/
+      color: #30add7;
       border: 1px solid #30add7;
       font-size: 14px;
       font-family: "kanun_regular";
-      background-image: url(../img/bottom-chevron-white.svg);
+      background-image: url(../img/bottom-chevron-blue.svg);
       background-repeat: no-repeat;
-      background-size: 10px;
-      background-position: right 10px center;
+      background-size: 15px;
+      background-position: right 20px center;
       -webkit-appearance: none;
       -moz-appearance: none;
       cursor: pointer;
@@ -2753,7 +2799,7 @@ body *{
     .filter_section div div input{
       background-color: transparent;
       border: 1px solid #30add7;
-      padding: 13px 15px;
+      padding: 15px 15px;
       width: 100%;
       color: #30add7;
       font-family: 'kanun_extralight';
@@ -2766,7 +2812,7 @@ body *{
     .filter_section div div:nth-child(3) a{
       display: inline-block;
       width: 60px;
-      height: 46px;
+      height: 50px;
       float: left;
       background: url(../img/icon_search.svg) no-repeat;
       background-position: center;

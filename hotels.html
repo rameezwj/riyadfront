@@ -372,15 +372,11 @@
     <img src="img/right-chevron-white.svg" />
   </div>
   
-
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"/></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+  <script src="js/gsap_scrollmagic.js"></script>
   <script src="js/jquery.mCustomScrollbar.js"></script>
+  <script src="js/parallax.min.js"></script>
 
   <!-- blotter effect, to be used later -->
   <!-- <script src="js/blotter.min.js"></script>
@@ -389,6 +385,15 @@
   
   <script src="js/swiper.min.js"></script>
   <!-- <script src="js/main.js"></script> -->
+
+  <script type="text/javascript">
+    var images = document.querySelectorAll('.hotel_item .hotel_img img, .prom_banner img');
+    new simpleParallax(images, {
+      overflow: false,
+      delay: 2,
+      transition: 'cubic-bezier(0,0,0,1)'
+    });
+  </script>
 
   <script>
     // window load event
@@ -453,7 +458,7 @@
       jQuery('.hotel_item').each(function(){
         var tl_hotel = new TimelineMax();
 
-        tl_hotel.staggerFromTo(jQuery(this).find('.hotel_img, .hotel_content h1, .hotel_content span, .hotel_content p, .hotel_content div'), 2, { scaleY: 0, opacity: 0, y: 200 }, { scaleY: 1, opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
+        tl_hotel.staggerFromTo(jQuery(this).find('.hotel_img, .hotel_content h1, .hotel_content span, .hotel_content p, .hotel_content div'), 2, { opacity: 0, y: 200 }, { opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
 
         var scene_about = new ScrollMagic.Scene({
           offset: '-100px',
@@ -513,10 +518,7 @@
 
       // jQuery('.hm_about_wrapper .about_content_wrapper .about_content p').mCustomScrollbar();
     });
-
-    // dom ready event
-
-    
+    // dom ready event    
   </script>
 </body>
 
