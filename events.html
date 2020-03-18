@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -125,7 +126,7 @@
         <div id="top_events_offers_wrapper" class="ext_swiper top_events_offers_wrapper swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="slide_content_wrapper">
+              <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_14.jpg" />
 
@@ -135,7 +136,7 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="slide_content_wrapper">
+              <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_15.jpg" />
 
@@ -145,7 +146,7 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="slide_content_wrapper">
+              <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_16.jpg" />
 
@@ -209,7 +210,7 @@
       <div class="inner_wrapper">
         <div class="events_list_wrapper">
           <div class="events_item marginb100">
-            <div class="events_img">
+            <div class="events_img masking">
               <h5> Event </h5>
               <img src="img/banr_12.jpg" />
             </div>
@@ -241,7 +242,7 @@
           </div>
 
           <div class="events_item layout_2 marginb100">
-            <div class="events_img">
+            <div class="events_img masking">
               <h5> Event </h5>
               <img src="img/banr7.jpg" />
             </div>
@@ -273,7 +274,7 @@
           </div>
 
           <div class="events_item marginb100">
-            <div class="events_img">
+            <div class="events_img masking">
               <h5> Event </h5>
               <img src="img/hm_banr1.jpg" />
             </div>
@@ -305,7 +306,7 @@
           </div>
 
           <div class="events_item layout_2 marginb100">
-            <div class="events_img">
+            <div class="events_img masking">
               <h5> Event </h5>
               <img src="img/hotl1.jpg" />
             </div>
@@ -521,13 +522,12 @@
       jQuery('body').css({'overflow': 'auto'});
       jQuery('.loader-wrapper').addClass('loaded');
 
-
       var tmenu = new TimelineMax();
       var tlogo = new TimelineMax();
       var tBanrHeading = new TimelineMax();
-      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2)
-      
-      setTimeout(function(){ jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');}, 4000);
+      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+          jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+      });
       
       tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
       tBanrHeading.staggerFrom('.right-opt, .page_banner .swiper-slide h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
@@ -578,7 +578,7 @@
       var controller = new ScrollMagic.Controller();
       var tl_topEventOffers = new TimelineMax(); // top events & offers timeline
 
-      tl_topEventOffers.from(`.top_events_offers_outer_wrapper h4`, 1, {x: -400, ease: Power3.easeOut })
+      tl_topEventOffers.from(`.top_events_offers_outer_wrapper h4`, 1, { opacity: 0, x: -400, ease: Power3.easeOut })
       .staggerFrom('.top_events_offers_outer_wrapper .swiper-slide', 1, { y: 150, ease: Power2.easeOut }, .1, '-=1')
       .staggerFromTo('.slide_content_wrapper > img', 5, { scale: 1.3 }, { scale: 1, ease: Power4.easeOut }, 0, '-=1')
 

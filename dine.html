@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -125,22 +126,28 @@
 
         <div class="featured_products_wrapper outer_wrapper">
           <div class="inner_wrapper">
-            <div style="background-image: url('ximg/banr_17.jpg');">
-              <img src="img/ri1.jpg" />
-              <h1 class="effect1 bk_blue">
-                <em>
-                  Starbucks
-                  <span>
-                    Find out more
-                  </span>
-                </em>
-              </h1>  
+            <div class="masking">
+              <a href="#">
+                <img src="img/ri1.jpg" />
+                <h1 class="effect1 bk_blue">
+                  <em>
+                    Starbucks
+                    <span>
+                      Find out more
+                    </span>
+                  </em>
+                </h1>
+              </a>
             </div>
-            <div style="background-image: url('ximg/banr_18.jpg');">
-              <img src="img/ri2.jpg" />
+            <div class="masking">
+              <a href="#">
+                <img src="img/ri2.jpg" />
+              </a>
             </div>
-            <div style="background-image: url('ximg/banr_19.jpg');">
-              <img src="img/ri3.jpg" />
+            <div class="masking">
+              <a href="#">
+                <img src="img/ri3.jpg" />
+              </a>
             </div>
           </div>
         </div>
@@ -183,7 +190,7 @@
 
         <div class="restaurants_list_wrapper">
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_purple"> Louis Vuitton </h5>
               <img src="img/res1.jpg" />
             </div>
@@ -202,7 +209,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_pink"> Louis Vuitton </h5>
               <img src="img/res2.jpg" />
             </div>
@@ -221,7 +228,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_blue"> Louis Vuitton </h5>
               <img src="img/res3.jpg" />
             </div>
@@ -240,7 +247,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_purple"> Louis Vuitton </h5>
               <img src="img/res1.jpg" />
             </div>
@@ -259,7 +266,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_pink"> Louis Vuitton </h5>
               <img src="img/res2.jpg" />
             </div>
@@ -278,7 +285,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_blue"> Louis Vuitton </h5>
               <img src="img/res3.jpg" />
             </div>
@@ -297,7 +304,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_purple"> Louis Vuitton </h5>
               <img src="img/res1.jpg" />
             </div>
@@ -316,7 +323,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_pink"> Louis Vuitton </h5>
               <img src="img/res2.jpg" />
             </div>
@@ -335,7 +342,7 @@
           </div>
 
           <div class="restaurants_item">
-          <a href="#">  <div class="restaurants_img">
+          <a href="#">  <div class="restaurants_img masking">
               <h5 class="bk_blue"> Louis Vuitton </h5>
               <img src="img/res3.jpg" />
             </div>
@@ -533,9 +540,9 @@
       var tmenu = new TimelineMax();
       var tlogo = new TimelineMax();
       var tBanrHeading = new TimelineMax();
-      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2)
-      
-      setTimeout(function(){ jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');}, 4000);
+      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+          jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+      })
       
       tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
       tBanrHeading.staggerFrom('.right-opt, .page_banner .swiper-slide h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)

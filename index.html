@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -539,14 +540,13 @@
       jQuery('body').css({'overflow': 'auto'});
       jQuery('.loader-wrapper').addClass('loaded');
 
-
       var tmenu = new TimelineMax();
       var tlogo = new TimelineMax();
       var tBanrHeading = new TimelineMax();
-      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2)
-      
-      setTimeout(function(){ jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');}, 4000);
-      
+      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+          jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+      });
+
       tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
       tBanrHeading.staggerFrom('.right-opt, .hm_banner .swiper-slide .slide_para h4, .hm_banner .swiper-slide .slide_para h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
       .from('.hm_banner .swiper-slide img', 2, { scaleY: .6, opacity: 0, y: 200, ease: Power4.easeOut }, '-=3')
@@ -572,8 +572,8 @@
       setTimeout(function()
       {
         TweenMax.fromTo(`.hm_banner .swiper-slide.sld${index} > img`, 2, { opacity: 1, scale: 1.2, y: 200 }, { opacity: 1, scale: 1, y: 0, ease: Power3.easeOut })
-        TweenMax.fromTo(`.hm_banner .swiper-slide.sld${index} .slide_para h4`, 3, { scale: 1, x: 200, 'clip-path': 'circle(0px at center)' }, { scale: 1, x: 0, 'clip-path': 'circle(500px at left)', ease: Power3.easeOut, delay: .6 })
-        TweenMax.fromTo(`.hm_banner .swiper-slide.sld${index} .slide_para h1`, 3, { scale: 1, x: -200, 'clip-path': 'circle(0px at center)' }, { scale: 1, x: 0, 'clip-path': 'circle(500px at center)', ease: Power3.easeOut, delay: .6 })
+        TweenMax.fromTo(`.hm_banner .swiper-slide.sld${index} .slide_para h4`, 3, { scale: 1, x: 200, 'clip-path': 'circle(0px at center)' }, { scale: 1, x: 0, 'clip-path': 'circle(700px at left)', ease: Power3.easeOut, delay: .6 })
+        TweenMax.fromTo(`.hm_banner .swiper-slide.sld${index} .slide_para h1`, 3, { scale: 1, x: -200, 'clip-path': 'circle(0px at center)' }, { scale: 1, x: 0, 'clip-path': 'circle(700px at center)', ease: Power3.easeOut, delay: .6 })
       }, 0);
     });
 
@@ -597,9 +597,9 @@
       var controller = new ScrollMagic.Controller();
       var tl_whatsHappening = new TimelineMax(); // what happening timeline
 
-      tl_whatsHappening.from(`.whats_happening_outer_wrapper h4`, 1, {x: -400, ease: Power3.easeOut })
+      tl_whatsHappening.from(`.whats_happening_outer_wrapper h4`, 1, { opacity: 0, x: -400, ease: Power3.easeOut })
       .staggerFrom('.whats_happening_outer_wrapper .swiper-slide, .whats_happening_outer_wrapper .swiper-slide .slide_content .anim', 1, { opacity: 0, y: 150, ease: Power2.easeOut }, .2, '-=1')
-      .staggerFromTo('.slide_content_wrapper > img', 5, { scale: 1.3 }, { scale: 1, ease: Power4.easeOut }, 0, '-=1')
+      .staggerFromTo('.slide_content_wrapper > img', 5, { scale: 1.3 }, { scale: 1, ease: Power4.easeOut }, 0, '-=4')
 
       var scene_whatsHappening = new ScrollMagic.Scene({
         offset: -50,
@@ -614,7 +614,7 @@
       var controller = new ScrollMagic.Controller();
       var tl_about = new TimelineMax(); // what happening timeline
 
-      tl_about.from(`.hm_about_wrapper h4`, 2, {x: -300, ease: Power3.easeOut })
+      tl_about.from(`.hm_about_wrapper h4`, 2, { opacity: 0, x: -300, ease: Power3.easeOut })
       .staggerFromTo('.hm_about_wrapper .about_content span, .hm_about_wrapper .about_content h1, .hm_about_wrapper .about_content p, .hm_about_wrapper .about_content div', 2, { opacity: 0, y: 200 }, { opacity: 1, y: 0, ease: Power4.easeOut }, .3, '0')
 
       var scene_about = new ScrollMagic.Scene({

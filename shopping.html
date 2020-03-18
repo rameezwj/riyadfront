@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -431,7 +432,7 @@
   <script src="js/jquery.mCustomScrollbar.js"></script>
   <script src="js/parallax.min.js"></script>
   <script src="https://unpkg.com/colcade@0/colcade.js"></script>
-  
+
   <!-- blotter effect, to be used later -->
   <!-- <script src="js/blotter.min.js"></script>
   <script src="js/liquidDistortMaterial.js"></script> -->
@@ -446,14 +447,13 @@
       jQuery('body').css({'overflow': 'auto'});
       jQuery('.loader-wrapper').addClass('loaded');
 
-
       var tmenu = new TimelineMax();
       var tlogo = new TimelineMax();
       var tBanrHeading = new TimelineMax();
-      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2)
-      
-      setTimeout(function(){ jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');}, 4000);
-      
+      tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+          jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+      });
+
       tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
       tBanrHeading.staggerFrom('.right-opt, .page_banner .swiper-slide h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
       .from('.page_banner .swiper-slide img', 2, { scaleY: .6, opacity: 0, y: 200, ease: Power4.easeOut }, '-=3')

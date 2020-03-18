@@ -1,0 +1,67 @@
+/*for larger screens*/
+  @media only screen and (min-width: 1600px){
+    .menu_wrapper {
+      padding-top: 30px;
+    }
+    .hm_banner {
+      height: 90vh;
+    }
+    .inner_wrapper {
+      width: 70%;
+    }
+    .hm_banner .swiper-slide .slide_para h4 {
+      font-size: 40px;
+      line-height: 45px;
+    }
+    .hm_banner .swiper-slide .slide_para h1 {
+      font-size: 120px;
+      line-height: 140px;
+      margin: 10px 0 0 -3px;
+      max-height: 290px;
+      overflow: hidden;
+    }
+    .whats_happening_outer_wrapper h4 {
+      padding: 0 0 20px 15%;
+    }
+    .hm_about_wrapper h4 {
+      padding-left: 15%;
+    }
+    .whats_happening_wrapper {
+      padding-left: 15%;
+    }
+    .hm_about_wrapper .about_content_wrapper {
+      padding-left: 15%;
+    }
+    .stay_connect_wrapper {
+      padding-left: 15%;
+    }
+    .ft_links_outer_wrapper {
+      margin-left: 15%;
+    }
+    .ft_links_outer_wrapper {
+      margin-left: 15%;
+    }
+    .ft_special_offers {
+      width: calc( ( 100% / 3 ) - 10% );
+      margin-right: 15%;
+    }
+    .page_banner {
+      height: 80vh;
+    }
+    .page_banner_inner_wrapper .swiper-slide h1 {
+      left: 15%;
+    }
+    .top_events_offers_wrapper {
+      padding-left: 15%;
+    }
+    .aboutus_item .aboutus_content p {
+      line-height: 25px;
+    }
+    .hotels_wrapper .hts_rt p {
+      line-height: 25px;
+    }
+    .hm_banner .swiper-pagination, .page_banner .swiper-pagination {
+      padding-right: 15%;
+    }
+  }
+/*for larger screens*/
