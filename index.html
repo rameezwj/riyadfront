@@ -835,6 +835,17 @@
         });
       }
 
+
+      // mobile menu
+        jQuery('.mmenu_icon').click(function(){
+          TweenMax.fromTo('.mmenu_list', .4, {display: 'none', y: 50}, {display: 'block', y: 0, ease: Power3.easeOut})
+          TweenMax.staggerFromTo('.mmenu_list > ul > li', .4, {y: 50, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, .6)
+        });
+
+        jQuery('.mmenu_list > ul > li > a').click(function(){
+          jQuery(this).parent().find('ul').slideToggle('fast');
+        });
+      // mobile menu
     });
 
     // dom ready event
