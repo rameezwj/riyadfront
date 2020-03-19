@@ -2777,3 +2777,5 @@ body *{
     }
   /*filter section*/
 /*inner pages*/
+
+.mmenu_wrapper, .mmenu_list { display: none; } 

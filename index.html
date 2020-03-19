@@ -40,12 +40,15 @@
     </div>
 
     <div class="mmenu_list">
+      <a href="#" class="mbtn_close_mmenu">
+        <img src="img/icon_home.svg" />
+      </a>
       <ul>
         <li>
           <a href="javascript: void(0)"> <span> About Us </span> </a>
         </li>
         <li>
-          <a href="javascript: void(0)"> <span> Business </span> </a>
+          <a href="javascript: void(0)"> <span> Business </span> <img src="img/right-chevron-white.svg"> </a>
           <ul>
             <li><a href="">Our Community</a></li>
             <li><a href="">Riyaad Front Business</a></li>
@@ -60,7 +63,7 @@
           <a href="javascript: void(0)"> <span> Shopping </span> </a>
         </li>
         <li>
-          <a href="javascript: void(0)"> <span> Public Park </span> </a>
+          <a href="javascript: void(0)"> <span> Public Park </span> <img src="img/right-chevron-white.svg"> </a>
           <ul>
             <li><a href="">Our Community</a></li>
             <li><a href="">Riyaad Front Business</a></li>
@@ -837,17 +840,41 @@
 
 
       // mobile menu
+        var mmenu_timline = new TimelineMax({ paused:true });
+        
+        mmenu_timline.fromTo('.mmenu_list', 1, {display: 'none', y: 0, opacity: 0}, {display: 'block', y: 0, opacity: 1, ease: Power4.easeOut})
+        .staggerFromTo('.mmenu_list > ul > li', .4, {y: 150, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, '-.1', function(){
+          // jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+        })
+
         jQuery('.mmenu_icon').click(function(){
-          TweenMax.fromTo('.mmenu_list', .4, {display: 'none', y: 50}, {display: 'block', y: 0, ease: Power3.easeOut})
-          TweenMax.staggerFromTo('.mmenu_list > ul > li', .4, {y: 50, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, .6)
+          // console.log('in')
+        /*  TweenMax.fromTo('.mmenu_list', 1, {display: 'none', y: 250, opacity: 0}, {display: 'block', y: 0, opacity: 1, ease: Power4.easeOut})
+          TweenMax.staggerFromTo('.mmenu_list > ul > li', .4, {y: 150, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, 1.2)*/
+          mmenu_timline.play();
+        });
+
+        jQuery('.mbtn_close_mmenu').click(function(){
+          /*mmenu_timline.staggerTo('.mmenu_list > ul > li', .4, {y: -150, opacity: 0}, .1)
+          .to('.mmenu_list', 1, {y: -250, opacity: 0, display: 'none', ease: Power4.easeOut}, '-=0.1', function(){
+            jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+          })
+          setTimeout(function(){
+            jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+
+          }, 2000)*/
+          mmenu_timline.reverse();
+          // console.log('out')
         });
 
         jQuery('.mmenu_list > ul > li > a').click(function(){
-          jQuery(this).parent().find('ul').slideToggle('fast');
+          var handle = jQuery(this);
+
+          jQuery(handle).parent().toggleClass('active');
+          jQuery(handle).parent().find('ul').slideToggle('fast');
         });
       // mobile menu
     });
-
     // dom ready event
 
     

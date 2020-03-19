@@ -19,6 +19,66 @@
 </head>
 
 <body class="inner_page page_events">
+
+  <!-- mmenu container -->
+    <div class="mmenu_wrapper">
+      <div>
+        <a class="msite_logo">
+          <img src="img/logo.png">
+        </a>
+        <a class="mmenu_icon">
+          <img src="img/icon_menu.png">
+        </a>
+        <a class="msearch_icon">
+          <img src="img/icon_search.svg">
+        </a>
+      </div>
+      <div>
+        <a href="#" class="mbtn_req_inquiry">
+          Request an inquiry
+        </a>
+      </div>
+    </div>
+
+    <div class="mmenu_list">
+      <a href="#" class="mbtn_close_mmenu">
+        <img src="img/icon_home.svg" />
+      </a>
+      <ul>
+        <li>
+          <a href="javascript: void(0)"> <span> About Us </span> </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)"> <span> Business </span> <img src="img/right-chevron-white.svg"> </a>
+          <ul>
+            <li><a href="">Our Community</a></li>
+            <li><a href="">Riyaad Front Business</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Hotels</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript: void(0)"> <span> Leasing </span> </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)"> <span> Shopping </span> </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)"> <span> Public Park </span> <img src="img/right-chevron-white.svg"> </a>
+          <ul>
+            <li><a href="">Our Community</a></li>
+            <li><a href="">Riyaad Front Business</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Hotels</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript: void(0)"> <span> Contact Us </span> </a>
+        </li>
+      </ul>
+    </div>
+  <!-- mmenu container -->
+
   <div class="loader-wrapper">
     <img src="img/dashed_circle.png" class="img-circ" />
     <img src="img/logo.png" class="img-logo" />
@@ -546,6 +606,29 @@
         el: '.page_banner .swiper-pagination',
         clickable: true,
       },
+      breakpoints: {
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        300: {
+          /*direction: 'horizontal',
+          effect: 'fade',*/
+          slidesPerView: 1,
+          spaceBetween: 0,
+          allowTouchMove: false,
+          simulateTouch: false,
+          shortSwipes: false,
+        },
+      },
     });
 
     page_banner.on('slideChangeTransitionStart', function () {
@@ -609,55 +692,91 @@
       })
     // individual events
 
-
     // dom ready event
     var navigate = '';
     jQuery('document').ready(function(){
 
-      jQuery('.top_events_offers_wrapper').hover(function(){
-        jQuery('.custom_cursor').css('display','block')
-      }, function()
-      {
-        jQuery('.custom_cursor').css('display','none')
-      })
-
-      jQuery('.slide_content a, .top_events_offers_wrapper .swiper-slide .slide_content_wrapper h6').hover(function(){
-        jQuery('.custom_cursor').css('display','none')
-      }, function()
-      {
-        jQuery('.custom_cursor').css('display','block')
-      })
-
-      jQuery("body").mousemove(function(e){
-        var left = jQuery(window).width()/2;
-        jQuery('.custom_cursor').css({
-          'top': `${e.pageY-25}px`,
-          'left': `${e.pageX-25}px`,
+      if(jQuery(window).width() >= 767){
+        jQuery('.whats_happening_wrapper').hover(function(){
+          jQuery('.custom_cursor').css('display','block')
+        }, function()
+        {
+          jQuery('.custom_cursor').css('display','none')
         })
 
-        // console.log(e.pageX, e.pageY);
+        jQuery('.slide_content a').hover(function(){
+          jQuery('.custom_cursor').css('display','none')
+        }, function()
+        {
+          jQuery('.custom_cursor').css('display','block')
+        })
 
-        if(e.pageX < left){
-          jQuery('.custom_cursor').addClass('left');
-          jQuery('.custom_cursor').removeClass('right');
-          navigate = 'swiper-button-prev';
-          // console.log('left')
-        }
-        else if(e.pageX > left){
-          jQuery('.custom_cursor').addClass('right');
-          jQuery('.custom_cursor').removeClass('left');
-          navigate = 'swiper-button-next';
-          // console.log('right')
-        }
-      });
+        jQuery("body").mousemove(function(e){
+          var left = jQuery(window).width()/2;
+          jQuery('.custom_cursor').css({
+            'top': `${e.pageY-25}px`,
+            'left': `${e.pageX-25}px`,
+          })
 
-      jQuery('body').on('click', '#top_events_offers_wrapper', function(e){
-        document.getElementById(`${navigate}`).click();
-      });
+          // console.log(e.pageX, e.pageY);
 
-      // jQuery('.hm_about_wrapper .about_content_wrapper .about_content p').mCustomScrollbar();
+          if(e.pageX < left){
+            jQuery('.custom_cursor').addClass('left');
+            jQuery('.custom_cursor').removeClass('right');
+            navigate = 'swiper-button-prev';
+            // console.log('left')
+          }
+          else if(e.pageX > left){
+            jQuery('.custom_cursor').addClass('right');
+            jQuery('.custom_cursor').removeClass('left');
+            navigate = 'swiper-button-next';
+            // console.log('right')
+          }
+        });
+
+        jQuery('body').on('click', '#whats_happening_wrapper', function(e){
+          document.getElementById(`${navigate}`).click();
+        });
+      }
+
+
+      // mobile menu
+        var mmenu_timline = new TimelineMax({ paused:true });
+        
+        mmenu_timline.fromTo('.mmenu_list', 1, {display: 'none', y: 0, opacity: 0}, {display: 'block', y: 0, opacity: 1, ease: Power4.easeOut})
+        .staggerFromTo('.mmenu_list > ul > li', .4, {y: 150, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, '-.1', function(){
+          // jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+        })
+
+        jQuery('.mmenu_icon').click(function(){
+          // console.log('in')
+        /*  TweenMax.fromTo('.mmenu_list', 1, {display: 'none', y: 250, opacity: 0}, {display: 'block', y: 0, opacity: 1, ease: Power4.easeOut})
+          TweenMax.staggerFromTo('.mmenu_list > ul > li', .4, {y: 150, opacity: 0}, {y: 0, opacity: 1, ease: Power3.easeOut}, .1, 1.2)*/
+          mmenu_timline.play();
+        });
+
+        jQuery('.mbtn_close_mmenu').click(function(){
+          /*mmenu_timline.staggerTo('.mmenu_list > ul > li', .4, {y: -150, opacity: 0}, .1)
+          .to('.mmenu_list', 1, {y: -250, opacity: 0, display: 'none', ease: Power4.easeOut}, '-=0.1', function(){
+            jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+          })
+          setTimeout(function(){
+            jQuery('.mmenu_list, .mmenu_list > ul > li').removeAttr('style');
+
+          }, 2000)*/
+          mmenu_timline.reverse();
+          // console.log('out')
+        });
+
+        jQuery('.mmenu_list > ul > li > a').click(function(){
+          var handle = jQuery(this);
+
+          jQuery(handle).parent().toggleClass('active');
+          jQuery(handle).parent().find('ul').slideToggle('fast');
+        });
+      // mobile menu
     });
-    // dom ready event    
+    // dom ready event
   </script>
 </body>
 

@@ -62,6 +62,11 @@
 
 /*for mobile screens*/
   @media only screen and (max-width: 767px){
+ .mmenu_wrapper, .mmenu_list { display: block; } 
+
+    .section_heading {
+        margin-bottom: 30px;
+    }
     .custom_cursor{
       display: none !important;
     }
@@ -174,7 +179,7 @@
         position: fixed;
         width: 100%;
         height: 100vh;
-        background-color: #000;
+        background-color: #d41578;
         top: 0;
         left: 0;
         right: 0;
@@ -187,7 +192,7 @@
       }
       .mmenu_list ul {
           width: 100%;
-          height: 100%;
+          height: calc( 100% - 50px );
           overflow: auto;
           margin: 0;
           padding: 0;
@@ -198,42 +203,72 @@
           float: none;
           display: block;
           list-style-type: none;
-          border-bottom: 1px solid #101010;
+          border-bottom: 1px solid #bc1069;
       }
       .mmenu_list ul li a {
-        font-size: 16px;
+        font-size: 20px;
         color: #fff;
         display: block;
-        padding: 20px 30px;
+        padding: 20px 40px;
+      }
+      .mmenu_list ul li a img{
+        width: 15px;
+        float: right;
+        height: auto;
+        transition: all .3s ease-out;
+        transform: rotate(0);
+      }
+      .mmenu_list ul li.active a img {
+        transform: rotate(90deg);
       }
       .mmenu_list ul li ul{
-        background-color: #3d3d3d;
+        /*background-color: #3d3d3d;*/
         display: none;
       }
       .mmenu_list ul li ul li a {
-        padding: 10px 30px;
-        font-size: 13px;
+        padding: 14px 40px;
+        font-size: 15px;
+      }
+      .mbtn_close_mmenu {
+        position: relative;
+        top: 0;
+        color: #fff;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: right;
+        /*font-size: 18px;*/
+        padding: 15px 30px;
+        background: #bb156b;
+      }
+      .mbtn_close_mmenu img {
+        width: 30px;
       }
     /*mobile menu*/
 
-    .hm_banner {
+    .hm_banner,
+    .page_banner {
       width: 100%;
       height: 90vh;
       background-color: #000;
     }
-    .hm_banner .swiper-slide .slide_para {
+    .hm_banner .swiper-slide .slide_para,
+    .page_banner .swiper-slide .slide_para {
       width: 90%;
       bottom: 50px;
     }
-    .hm_banner .swiper-slide .slide_para h4 {
+    .hm_banner .swiper-slide .slide_para h4,
+    .page_banner .swiper-slide .slide_para h4 {
       font-size: 3.5vw;
       line-height: 4.3vw;
     }
-    .hm_banner .swiper-slide .slide_para h1 {
+    .hm_banner .swiper-slide .slide_para h1,
+    .page_banner .swiper-slide .slide_para h1 {
       font-size: 50px;
       line-height: 50px;
     }
-    .hm_banner .swiper-slide > img {
+    .hm_banner .swiper-slide > img,
+    .page_banner .swiper-slide > img {
       width: auto;
       height: 100%;
     }
@@ -331,12 +366,16 @@
           padding: 0;
       }
       .content_rt_wrapper {
-          height: 300px;
+          min-height: 300px;
+          height: auto;
           background-size: cover;
           width: 100%;
           float: left;
           order: 2;
           background-attachment: unset;
+      }
+      .content_rt_wrapper .content_rt {
+          padding: 50px 20px;
       }
     /**/
 
@@ -372,6 +411,135 @@
         opacity: 0;
       }
     /*home types*/
+
+    /*homepage business*/
+      .why_rf {
+          background-attachment: unset;
+          height: auto;
+          padding: 30px 0;
+      }
+      .why_rf .inner_wrapper {
+          display: flex;
+          flex-direction: column;
+      }
+      .why_rf_content {
+          width: 100%;
+          top: auto;
+          transform: unset;
+          order: 1;
+      }
+      .wht_rf_rt {
+          width: 100%;
+          top: auto;
+          transform: unset;
+          display: flex;
+          flex: 1;
+          justify-content: space-around;
+          margin: 50px 0 30px 0;
+          order: 2;
+      }
+      .wht_rf_rt div {
+          margin: 0;
+      }
+      .wht_rf_rt div h2 {
+          font-size: 60px;
+      }
+      .why_rf_content h1 {
+          font-size: 35px;
+          line-height: 40px;
+      }
+      .hotels_wrapper .hts_lt {
+          width: 100%;
+          margin-bottom: 20px;
+      }
+      .hts_lt img {
+          width: 100% !important;
+          height: auto !important;
+          left: 0 !important;
+      }
+      .hotels_wrapper .inner_wrapper {
+          height: auto;
+      }
+      .hotels_wrapper .hts_rt {
+          width: 100%;
+          padding: 30px 0 0 0;
+      }
+      .page_homepage_leasing .hts_rt {
+        padding: 30px;
+      }
+      .c_form input {
+          width: 100%;
+          padding-left: 0;
+      }
+      .c_form .submit_btn_wrap {
+          float: left;
+      }
+    /*homepage business*/
+
+    /*about page*/
+      .aboutus_item h4 {
+          margin-bottom: 25px;
+      }
+      .aboutus_item .aboutus_content span {
+          margin: 20px 0 20px 0;
+      }
+      .aboutus_item .aboutus_img {
+          width: 100%;
+      }
+      .aboutus_item.layout_2 .aboutus_content {
+          padding: 20px 0;
+      }
+      .aboutus_item .aboutus_content {
+          width: 100%;
+          padding: 20px 0;
+      }
+    /*about page*/
+
+    /*dine*/
+      .featured_products_wrapper .inner_wrapper div {
+          width: 100% !important;
+          margin-bottom: 10px !important;
+      }
+      .featured_products_wrapper .inner_wrapper div img {
+          width: 100% !important;
+          height: auto !important;
+      }
+      .featured_products_wrapper .inner_wrapper div h1 {
+          width: 100% !important;
+      }
+      .filter_section > div {
+          flex-direction: column;
+      }
+      .filter_section div div {
+          width: 100%;
+          margin-bottom: 10px;
+      }
+      .restaurants_item {
+          width: 100%;
+          margin: 0 0 10px 0;
+          padding: 0 10px;
+      }
+      .prom_banner.type3 {
+          display: flex;
+          flex-direction: column;
+      }
+      .prom_banner.type3 img {
+          width: 100%;
+          height: auto;
+          order: 2;
+      }
+      .prom_banner.type3 .prom_banner_content {
+          order: 1;
+          position: static;
+          width: 100%;
+          padding: 20px;
+      }
+      .prom_banner h1 {
+          font-size: 30px;
+          line-height: 35px;
+          margin: 0 0 20px 0;
+      }
+    /*dine*/
 
     /*footer*/
       .ft_links_outer_wrapper {
@@ -415,4 +583,5 @@
       }
     /*footer*/
   }
-/*for mobile screens
+/*for mobile screens*/
+
