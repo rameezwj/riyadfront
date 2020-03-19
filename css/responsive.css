@@ -274,11 +274,13 @@
     }
 
     /*what happening*/
-      .whats_happening_wrapper {
+      .whats_happening_wrapper,
+      .top_events_offers_wrapper {
         padding-left: 20px;
         height: 500px;
       }
-      .whats_happening_wrapper .swiper-slide{
+      .whats_happening_wrapper .swiper-slide,
+      .top_events_offers_wrapper .swiper-slide{
         /*width: unset;*/
         /*display: unset;*/
         background-size: cover;
@@ -300,7 +302,8 @@
           left: auto;
           padding: 0 20px;
       }
-      .whats_happening_wrapper .swiper-slide .slide_content_wrapper img {
+      .whats_happening_wrapper .swiper-slide .slide_content_wrapper img,
+      .top_events_offers_wrapper .swiper-slide .slide_content_wrapper img {
         display: none;
       }
       .whats_happening_wrapper .swiper-slide .slide_content_wrapper .slide_content h1 {
@@ -315,6 +318,7 @@
       .whats_happening_wrapper .swiper-slide .slide_content_wrapper:hover .slide_content {
         transform: unset;
       }
+
     /*what happening*/
 
     /*subscribe*/
@@ -477,6 +481,9 @@
     /*homepage business*/
 
     /*about page*/
+      .aboutus_item {
+          margin: 0 !important;
+      }
       .aboutus_item h4 {
           margin-bottom: 25px;
       }
@@ -519,27 +526,110 @@
           margin: 0 0 10px 0;
           padding: 0 10px;
       }
+
+      .prom_banner,
+      .prom_banner.type2,
       .prom_banner.type3 {
           display: flex;
           flex-direction: column;
       }
+
+      .prom_banner img,
+      .prom_banner.type2 img,
       .prom_banner.type3 img {
           width: 100%;
           height: auto;
           order: 2;
       }
+      .prom_banner .prom_banner_content,
+      .prom_banner.type2 .prom_banner_content,
       .prom_banner.type3 .prom_banner_content {
           order: 1;
           position: static;
           width: 100%;
           padding: 20px;
+          top: auto;
+          left: auto;
+          transform: unset;
+          background: #961e77
       }
-      .prom_banner h1 {
+      .prom_banner h1,
+      .prom_banner.type2 h1,
+      .prom_banner.type3 h1 {
           font-size: 30px;
           line-height: 35px;
           margin: 0 0 20px 0;
       }
+      .page_hotel .prom_banner .prom_banner_content{
+        background-color: #30add7;
+      }
     /*dine*/
+
+    /*events*/
+      .events_item {
+          display: flex;
+          flex-direction: column;
+          margin: 0 0 30px 0 !important;
+      }
+      .events_item .events_img {
+          width: 100%;
+          margin-bottom: 20px;
+      }
+      .events_item .events_content {
+          width: 100%;
+          padding: 0;
+      }
+      .events_item .events_content p {
+          font-size: 18px;
+          line-height: 28px;
+      }
+      .top_events_offers_wrapper .swiper-slide .slide_content_wrapper {
+          width: 100%;
+          height: 100%;
+      }
+      .top_events_offers_wrapper .swiper-slide .slide_content_wrapper h6 {
+          width: 100%;
+          font-size: 25px;
+      }
+    /*events*/
+
+    /*hotels*/
+      .hotel_item {
+          display: flex;
+          flex-direction: column;
+          margin: 0 0 30px 0 !important;
+      }
+      .hotel_item .hotel_img {
+          width: 100%;
+          margin-bottom: 20px;
+          order: 1;
+      }
+      .hotel_item .hotel_content,
+      .hotel_item.layout_2 .hotel_content {
+          width: 100%;
+          padding: 0;
+          order: 2;
+      }
+      .hotel_item .hotel_content p {
+          font-size: 18px;
+          line-height: 28px;
+      }
+      .hotel_item .hotel_content > div {
+          position: relative;
+      }
+      .hotel_item .hotel_img h5 {
+          font-size: 20px;
+          font-weight: normal;
+          bottom: 0;
+          top: auto;
+          left: 0;
+          right: auto;
+          padding: 10px 20px;
+          background: #30add7;
+          display: inline-block;
+          width: auto;
+      }
+    /*hotels*/
 
     /*footer*/
       .ft_links_outer_wrapper {

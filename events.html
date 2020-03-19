@@ -185,7 +185,7 @@
         </div>
         <div id="top_events_offers_wrapper" class="ext_swiper top_events_offers_wrapper swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background-image: url('img/banr_14.jpg');">
               <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_14.jpg" />
@@ -195,7 +195,7 @@
                 </h6>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background-image: url('img/banr_15.jpg');">
               <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_15.jpg" />
@@ -205,7 +205,7 @@
                 </h6>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background-image: url('img/banr_16.jpg');">
               <div class="masking slide_content_wrapper">
                 <div class="mask_reveal"></div>
                 <img src="img/banr_16.jpg" />
@@ -654,6 +654,27 @@
       navigation: {
         nextEl: '.top_events_offers_wrapper .swiper-button-next',
         prevEl: '.top_events_offers_wrapper .swiper-button-prev',
+      },
+      breakpoints: {
+        1024: {
+          // slidesPerView: 3,
+          // spaceBetween: 40,
+        },
+        768: {
+          freeMode: true,
+          slidesPerView: 'auto',
+          spaceBetween: 10,
+        },
+        640: {
+          freeMode: true,
+          slidesPerView: 'auto',
+          spaceBetween: 10,
+        },
+        300: {
+          freeMode: true,
+          slidesPerView: 'auto',
+          spaceBetween: 10,
+        },
       },
     });
 
