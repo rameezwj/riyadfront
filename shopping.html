@@ -401,7 +401,7 @@
               </ul>
           </div>
 
-          <div class="ft_special_offers scroll_anim">
+          <div class="ft_special_offers">
             <h6 class="scroll_anim">
               Download The Riyadh Front App for special offers and more 
             </h6>
@@ -508,7 +508,8 @@
           jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
       });
 
-      tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
+      tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet, .hm_banr_btn, .msite_logo, .mmenu_icon, .msearch_icon, .mbtn_req_inquiry', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
+      
       tBanrHeading.staggerFrom('.right-opt, .page_banner .swiper-slide h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
       .from('.page_banner .swiper-slide img', 2, { scaleY: .6, opacity: 0, y: 200, ease: Power4.easeOut }, '-=3')
       

@@ -459,7 +459,11 @@ body *{
   display: block;
   margin: 5px 0 0 -3px;
 }
-
+.hm_banr_btn {
+    position: absolute;
+    bottom: 150px;
+    right: 0;
+}
 
 /*menu2*/
   .menu_wrapper{
@@ -1698,7 +1702,7 @@ body *{
     /*display: none;*/
   }
   .loader-wrapper.loaded{
-    top: -250%;
+    top: -100%;
   }
 
   .loader-wrapper img.img-logo{
@@ -1732,6 +1736,7 @@ body *{
   }
 
   .loader-wrapper ul{
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -2465,7 +2470,7 @@ body *{
       overflow: hidden;
       float: left;
       margin: 0 10px 40px 10px;
-      width: calc( ( 100% / 3 ) - 20px );
+      width: calc( ( 100% / 4 ) - 20px );
       transform: scale(1);
       transition: all .3s ease-out;
     }
@@ -2498,6 +2503,7 @@ body *{
       padding: 5px 50px 5px 20px;
       margin: 0;
       background-color: #ea007f;
+      z-index: 1;
     }
     .restaurants_item .restaurants_content{
       float: left;

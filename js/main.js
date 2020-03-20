@@ -127,15 +127,23 @@ jQuery('document').ready(function(){
     var tl_footer_wrap = new TimelineMax(); // footer_wrap timeline
 
     tl_footer_wrap.staggerFromTo('.footer_wrap .scroll_anim', .5, { opacity: 0, y: 30 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '0')
-    .fromTo('.ft_special_offers', .7, { opacity: 0, y: 100 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '-=1')
+    .fromTo('.ft_special_offers', .7, { opacity: 0, y: 100 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '-=1.5')
 
     var scene_footer_wrap = new ScrollMagic.Scene({
-      offset: 0,
+      offset: '-100',
       reverse: false,
       triggerElement: '.footer_wrap',
     })
     .setTween(tl_footer_wrap).addTo(controller);
   // footer_wrap timeline
+
+  // scroll to a div
+    jQuery(".btn_leasing_inquire a, .hm_banr_btn a").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".leasing_wrapper").offset().top
+        }, 1000);
+    });
+  // scroll to a div
 });
 // dom ready event
 
