@@ -203,7 +203,7 @@
           float: none;
           display: block;
           list-style-type: none;
-          border-bottom: 1px solid #bc1069;
+          border-top: 1px solid #bc1069;
       }
       .mmenu_list ul li a {
         font-size: 20px;
@@ -482,6 +482,7 @@
           justify-content: space-around;
           margin: 50px 0 30px 0;
           order: 2;
+          flex-wrap: wrap;
       }
       .wht_rf_rt div {
           margin: 0;
@@ -512,14 +513,38 @@
       .page_homepage_leasing .hts_rt {
         padding: 30px;
       }
-      .c_form input {
+      .c_form input{
           width: 100%;
           padding-left: 0;
+      }
+      .c_form select {
+          width: 100%;
+          padding-left: 10px;
       }
       .c_form .submit_btn_wrap {
           float: left;
       }
     /*homepage business*/
+
+    /*leasing*/
+      .page_homepage_leasing .hm_about_wrapper {
+          height: auto;
+      }
+      .page_homepage_leasing .about_content_wrapper {
+        padding: 0 20px;
+      }
+      .btn_leasing_inquire {
+          width: calc( 100% - 0px ) !important;
+          position: relative !important;
+          margin: 0;
+          margin-top: 30px;
+      }
+      .btn_leasing_inquire a {
+        text-align: left !important;
+        padding-left: 20px !important;
+        width: 100% !important;
+      }
+    /*leasing*/
 
     /*about page*/
       .aboutus_item {

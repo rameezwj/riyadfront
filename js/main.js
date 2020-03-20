@@ -1,10 +1,10 @@
 (function() {
   if(jQuery(window).width() <= 767){
-    // var pass = prompt("Please enter the password");
+    /*var pass = prompt("Please enter the password");
 
     if (pass != 'null') {
-      // window.location.href = "http://google.com";
-    }
+      window.location.href = "http://google.com";
+    }*/
   }
 }());
 
@@ -13,7 +13,7 @@ var navigate = '';
 jQuery('document').ready(function(){
 
   if(jQuery(window).width() >= 767){
-    jQuery('.whats_happening_wrapper').hover(function(){
+    jQuery('.whats_happening_wrapper, #top_events_offers_wrapper').hover(function(){
       jQuery('.custom_cursor').css('display','block')
     }, function()
     {
@@ -50,7 +50,7 @@ jQuery('document').ready(function(){
       }
     });
 
-    jQuery('body').on('click', '#whats_happening_wrapper', function(e){
+    jQuery('body').on('click', '#whats_happening_wrapper, #top_events_offers_wrapper', function(e){
       document.getElementById(`${navigate}`).click();
     });
   }
@@ -107,6 +107,35 @@ jQuery('document').ready(function(){
       jQuery(handle).parent().find('ul').slideToggle('fast');
     });
   // mobile menu
+
+  // stay_connect_wrapper timeline
+    var controller = new ScrollMagic.Controller();
+    var tl_stay_connect_wrapper = new TimelineMax(); // stay_connect_wrapper timeline
+
+    tl_stay_connect_wrapper.staggerFromTo('.stay_connect_wrapper .scroll_anim', .7, { opacity: 0, y: 30 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '0')
+
+    var scene_stay_connect_wrapper = new ScrollMagic.Scene({
+      offset: 0,
+      reverse: false,
+      triggerElement: '.stay_connect_wrapper',
+    })
+    .setTween(tl_stay_connect_wrapper).addTo(controller);
+  // leasing_wrapper timeline
+
+  // footer_wrap timeline
+    var controller = new ScrollMagic.Controller();
+    var tl_footer_wrap = new TimelineMax(); // footer_wrap timeline
+
+    tl_footer_wrap.staggerFromTo('.footer_wrap .scroll_anim', .5, { opacity: 0, y: 30 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '0')
+    .fromTo('.ft_special_offers', .7, { opacity: 0, y: 100 }, { opacity: 1, y: 0, ease: Power1.easeOut }, .1, '-=1')
+
+    var scene_footer_wrap = new ScrollMagic.Scene({
+      offset: 0,
+      reverse: false,
+      triggerElement: '.footer_wrap',
+    })
+    .setTween(tl_footer_wrap).addTo(controller);
+  // footer_wrap timeline
 });
 // dom ready event
 
