@@ -2701,9 +2701,6 @@ body *{
       top: 50px;
       /*filter: grayscale(0);*/
     }
-    @media ( max-width: 767px ) {
-      .shop_products_wrapper .grid-col--3 { display: none; } /* show column 2 */
-    }
   /*shop page*/
 
   /*filter section*/

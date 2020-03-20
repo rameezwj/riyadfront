@@ -209,7 +209,7 @@
         font-size: 20px;
         color: #fff;
         display: block;
-        padding: 20px 40px;
+        padding: 20px 30px;
       }
       .mmenu_list ul li a img{
         width: 15px;
@@ -234,15 +234,53 @@
         top: 0;
         color: #fff;
         left: 0;
-        display: block;
-        width: 100%;
+        display: inline-block;
+        /* width: 100%; */
         text-align: right;
-        /*font-size: 18px;*/
-        padding: 15px 30px;
+        /* font-size: 18px; */
+        padding: 20px 30px;
         background: #bb156b;
+        float: left;
       }
       .mbtn_close_mmenu img {
         width: 30px;
+      }
+      .mmenu_search {
+          position: relative;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          width: calc( 100% - 90px );
+          display: inline-block;
+          /*background: #fff;*/
+          padding: 0;
+          float: left;
+          border-bottom: 1px solid #bb156b;
+      }
+      .mmenu_search a {
+          display: inline-block;
+          float: left;
+          position: relative;
+          padding: 19px 15px 20px 15px;
+          background: #af1465;
+      }
+      .mmenu_search a img{
+        width: 30px;
+        position: relative;
+        height: auto;
+      }
+      .mmenu_search input {
+          font-size: 17px;
+          width: calc( 100% - 60px );
+          padding: 23px 0 24px 30px;
+          border: 0;
+          float: left;
+          background-color: #af1465;
+          outline: none;
+          color: #d4cece;
+          margin: 0;
+          display: inline-block;
+          font-family: "kanun_light";
       }
     /*mobile menu*/
 
@@ -271,6 +309,9 @@
     .page_banner .swiper-slide > img {
       width: auto;
       height: 100%;
+    }
+    .page_banner_inner_wrapper .swiper-slide h1 {
+        font-size: 27px;
     }
 
     /*what happening*/
@@ -630,6 +671,16 @@
           width: auto;
       }
     /*hotels*/
+
+    /*shopping*/
+      .shop_products_wrapper .grid-col--2,
+      .shop_products_wrapper .grid-col--3 {
+        display: none;
+      }
+      .shop_products_wrapper .grid-item {
+          margin: 0 0 20px 0;
+      }
+    /*shopping*/
 
     /*footer*/
       .ft_links_outer_wrapper {
