@@ -147,6 +147,8 @@ jQuery('document').ready(function(){
 });
 // dom ready event
 
+
+// window resize event
 jQuery(window).resize(function(){
   // dine page
   if(jQuery('body').hasClass('page_events')){
@@ -155,3 +157,40 @@ jQuery(window).resize(function(){
   }
   // dine page
 });
+// window resize event
+
+
+// window load event
+jQuery(window).on('load', function(){
+  jQuery('body').css({'overflow': 'auto'});
+  jQuery('.loader-wrapper').addClass('loaded');
+
+  if(jQuery('body').hasClass('homepagesx')){
+
+    var tmenu = new TimelineMax();
+    var tlogo = new TimelineMax();
+    var tBanrHeading = new TimelineMax();
+    tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+        jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+    });
+
+    tlogo.staggerFrom('.site_logo, .swiper-pagination-bullet, .hm_banr_btn, .msite_logo, .mmenu_icon, .msearch_icon, .mbtn_req_inquiry', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
+    
+    tBanrHeading.staggerFrom('.right-opt, .hm_banner .swiper-slide .slide_para h4, .hm_banner .swiper-slide .slide_para h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
+    .from('.hm_banner .swiper-slide img', 2, { scaleY: .6, opacity: 0, y: 200, ease: Power4.easeOut }, '-=3')
+  }
+  else{
+    var tmenu = new TimelineMax();
+    var tlogo = new TimelineMax();
+    var tBanrHeading = new TimelineMax();
+    tmenu.staggerFrom('.menu_wrapper, .menu_wrapper .nav > ul > li', 1, { opacity: 0, y: 20, ease: Power4.easeOut }, .1, 2, function(){
+        jQuery('.menu_wrapper .nav > ul > li').removeAttr('style');
+    });
+
+    tlogo.staggerFrom('.site_logo, .msite_logo, .swiper-pagination-bullet, .hm_banr_btn, .mmenu_icon, .msearch_icon, .mbtn_req_inquiry', 1, { opacity: 0, y: -20, ease: Power4.easeOut }, .2, 3);
+    
+    tBanrHeading.staggerFrom('.right-opt, .page_banner .swiper-slide h1', 1.5, { opacity: 0, x: -50, ease: Power4.easeOut }, .2,2)
+    .from('.page_banner .swiper-slide img', 2, { scaleY: .6, opacity: 0, y: 200, ease: Power4.easeOut }, '-=3')
+  }
+});
+// window load event
