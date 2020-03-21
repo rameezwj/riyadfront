@@ -1338,14 +1338,14 @@ body *{
   .stay_connect_wrapper{
     position: relative;
     width: 100%;
-    padding: 100px 0 100px 5%;
+    padding: 80px 0 100px 0;
     background: #fff;
   }
 
   .stay_connect_wrapper .inner_wrapper{
     overflow: hidden;
-    width: calc( ( 100% / 3 ) * 2);
-    margin: 0;
+    /*width: calc( ( 100% / 3 ) * 2);*/
+    /*margin: 0;*/
   }
 
   .stay_connect_wrapper h2{
@@ -1358,12 +1358,13 @@ body *{
   }
   .stay_connect_wrapper .sc_form{
     float: right;
+    width: 60%;
   }
 
   .stay_connect_wrapper .sc_form input{
     color: #7b7b7b;
     font-size: 17px;
-    width: 300px;
+    width: calc( 100% - 160px );
     padding: 18px 25px;
     border: 0;
     border-bottom: 1px solid #ccc;
@@ -1378,6 +1379,7 @@ body *{
   .stay_connect_wrapper .sc_form a{
     padding-top: 20px;
     padding-bottom: 20px;
+    float: right;
   }
 
 /*stay connected*/
@@ -2755,7 +2757,7 @@ body *{
       opacity: 1;
     }
     .shop_products_wrapper .grid-item h3{
-      position: absolute;
+      position: relative;
       color: #fff;
       padding: 10px 15px;
       font-family: "kanun_light";
@@ -2764,7 +2766,7 @@ body *{
       font-weight: normal;
       left: 0;
       display: block;
-      width: 80%;
+      /*width: 80%;*/
       margin: 0;
       transition: all 1s cubic-bezier(0.9, 0.01, 0, 1);
     }

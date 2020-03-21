@@ -61,7 +61,7 @@
 /*for larger screens*/
 
 /*for mobile screens*/
-  @media only screen and (max-width: 767px){
+  @media only screen and (max-width: 1150px){
  .mmenu_wrapper, .mmenu_list { display: block; } 
 
     .section_heading {
@@ -483,13 +483,14 @@
           transform: unset;
           display: flex;
           flex: 1;
-          justify-content: space-around;
+          justify-content: flex-start;
           margin: 50px 0 30px 0;
           order: 2;
           flex-wrap: wrap;
       }
       .wht_rf_rt div {
           margin: 0;
+          margin-right: 25px;
       }
       .wht_rf_rt div h2 {
           font-size: 60px;
@@ -497,6 +498,10 @@
       .why_rf_content h1 {
           font-size: 35px;
           line-height: 40px;
+      }
+      .page_homepage_leasing .why_rf_content,
+      .page_homepage_leasing .wht_rf_rt {
+          margin: 50px 0 30px 0;
       }
       .hotels_wrapper .hts_lt {
           width: 100%;
@@ -755,3 +760,45 @@
   }
 /*for mobile screens*/
 
+
+@media only screen and (min-width: 440px) and (max-width: 1150px){
+  .ft_special_offers {
+    height: auto;
+  }
+  .ft_special_offers h6 {
+    width: calc( 100% - 130px );
+  }
+  .ft_special_offers img {
+    position: static;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1150px){
+  /*dine*/
+    .restaurants_item {
+      width: calc( ( 100% / 2 ) - 0px )
+    }
+  /*dine*/
+
+  /*shopping*/
+    .shop_products_wrapper .grid-col--2 {
+      display: block;
+    }
+    .shop_products_wrapper .grid-col--2 {
+      margin-left: 15px;
+      /*margin-right: 15px;*/
+    }
+    .shop_products_wrapper .grid-item {
+        /*margin: 20px 10px;*/
+    }
+  /*shopping*/
+}
+
+@media only screen and (min-width: 1151px) and (max-width: 1250px){
+  /*menu*/
+    .menu_wrapper .nav li {
+      margin-right: 15px;
+    }
+  /*menu*/
+}
